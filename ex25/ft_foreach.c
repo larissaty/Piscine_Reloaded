@@ -1,35 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_foreach.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ltayra-y <ltayra-y@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/04 13:31:27 by ltayra-y          #+#    #+#             */
-/*   Updated: 2024/10/10 13:03:06 by ltayra-y         ###   ########.fr       */
+/*   Created: 2024/10/09 18:20:59 by ltayra-y          #+#    #+#             */
+/*   Updated: 2024/10/09 18:44:07 by ltayra-y         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-int	main(int argc, char **argv)
+void	ft_foreach(int *tab, int length, void (*f)(int))
 {
 	int	i;
-	int	j;
 
-	i = 1;
-	if (argc < 2)
-		return (0);
-	while (i < argc)
+	i = 0;
+	while (i < length)
 	{
-		j = 0;
-		while (argv[i][j] != '\0')
-		{			
-			ft_putchar(argv[i][j]);
-			j++;
-		}
-		ft_putchar('\n');
+		(*f)(tab[i]);
 		i++;
 	}
-	return (0);
 }
+
+// #include <stdio.h>
+
+// void	f_double(int a)
+// {
+// 	int	doub;
+
+// 	doub = 2 * a;
+// 	printf("%d\n", doub);
+// }
+
+// int	main(void)
+// {
+// 	int	tab[] = {1, 2, 3};
+
+// 	ft_foreach(tab, 3, &f_double);
+// 	return (0);
+// }

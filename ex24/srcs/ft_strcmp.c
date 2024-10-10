@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ltayra-y <ltayra-y@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/04 13:31:27 by ltayra-y          #+#    #+#             */
-/*   Updated: 2024/10/10 13:03:06 by ltayra-y         ###   ########.fr       */
+/*   Created: 2024/10/04 09:41:09 by ltayra-y          #+#    #+#             */
+/*   Updated: 2024/10/04 09:49:04 by ltayra-y         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-int	main(int argc, char **argv)
+int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
-	int	j;
 
-	i = 1;
-	if (argc < 2)
-		return (0);
-	while (i < argc)
+	i = 0;
+	while (s1[i] != '\0' && s2[i] != '\0')
 	{
-		j = 0;
-		while (argv[i][j] != '\0')
-		{			
-			ft_putchar(argv[i][j]);
-			j++;
-		}
-		ft_putchar('\n');
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
 		i++;
 	}
-	return (0);
+	return (s1[i] - s2[i]);
 }
+
+// #include <stdio.h>
+
+// int	main(int argc, char **argv)
+// {
+// 	if (argc != 3)
+// 		return (0);
+// 	printf("%d", ft_strcmp(argv[1], argv[2]));
+// 	return (0);
+// }

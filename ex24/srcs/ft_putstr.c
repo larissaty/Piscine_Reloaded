@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ltayra-y <ltayra-y@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/04 13:31:27 by ltayra-y          #+#    #+#             */
-/*   Updated: 2024/10/10 13:03:06 by ltayra-y         ###   ########.fr       */
+/*   Created: 2024/10/03 18:17:40 by ltayra-y          #+#    #+#             */
+/*   Updated: 2024/10/04 08:07:43 by ltayra-y         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_putchar(char c);
 
-int	main(int argc, char **argv)
+void	ft_putstr(char *str)
 {
 	int	i;
-	int	j;
 
-	i = 1;
-	if (argc < 2)
-		return (0);
-	while (i < argc)
+	i = 0;
+	while (str[i] != 0)
 	{
-		j = 0;
-		while (argv[i][j] != '\0')
-		{			
-			ft_putchar(argv[i][j]);
-			j++;
-		}
-		ft_putchar('\n');
+		ft_putchar(str[i]);
 		i++;
 	}
-	return (0);
 }
+
+// int	main(void)
+// {
+// 	char	str[] = "putstr";
+
+// 	ft_putstr(str);
+// 	return (0);
+// }

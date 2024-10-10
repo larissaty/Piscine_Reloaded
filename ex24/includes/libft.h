@@ -1,35 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ltayra-y <ltayra-y@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/04 13:31:27 by ltayra-y          #+#    #+#             */
-/*   Updated: 2024/10/10 13:03:06 by ltayra-y         ###   ########.fr       */
+/*   Created: 2024/10/09 14:50:58 by ltayra-y          #+#    #+#             */
+/*   Updated: 2024/10/09 14:52:48 by ltayra-y         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef LIBFT_H
+# define LIBFT_H
+
 void	ft_putchar(char c);
+void	ft_putstr(char *str);
+int		ft_strcmp(char *s1, char *s2);
+int		ft_strlen(char *str);
+void	ft_swap(int *a, int *b);
 
-int	main(int argc, char **argv)
-{
-	int	i;
-	int	j;
-
-	i = 1;
-	if (argc < 2)
-		return (0);
-	while (i < argc)
-	{
-		j = 0;
-		while (argv[i][j] != '\0')
-		{			
-			ft_putchar(argv[i][j]);
-			j++;
-		}
-		ft_putchar('\n');
-		i++;
-	}
-	return (0);
-}
+#endif

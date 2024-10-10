@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ltayra-y <ltayra-y@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/04 13:31:27 by ltayra-y          #+#    #+#             */
-/*   Updated: 2024/10/10 13:03:06 by ltayra-y         ###   ########.fr       */
+/*   Created: 2024/10/02 19:02:45 by ltayra-y          #+#    #+#             */
+/*   Updated: 2024/10/02 19:07:34 by ltayra-y         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-int	main(int argc, char **argv)
+void	ft_swap(int *a, int *b)
 {
-	int	i;
-	int	j;
+	int	c;
 
-	i = 1;
-	if (argc < 2)
-		return (0);
-	while (i < argc)
-	{
-		j = 0;
-		while (argv[i][j] != '\0')
-		{			
-			ft_putchar(argv[i][j]);
-			j++;
-		}
-		ft_putchar('\n');
-		i++;
-	}
-	return (0);
+	c = *a;
+	*a = *b;
+	*b = c;
 }
+
+// #include <stdio.h>
+// int	main(void)
+// {
+// 	int	a;
+// 	int	b;
+
+// 	a = 1;
+// 	b = 2;
+// 	ft_swap(&a, &b);
+// 	printf("%i\n", a);
+// 	printf("%i\n", b);
+// 	return (0);
+// }
